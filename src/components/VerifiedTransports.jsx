@@ -181,7 +181,7 @@ export default function VerifiedTransports() {
   }));
 
   return (
-    <section className="w-full h-screen py-10 bg-gray-50">
+    <section className="w-full h-[32rem] py-10 bg-gray-50">
       <h2 className="text-center text-3xl font-bold mb-8 text-[#01055b]">Verified Transports</h2>
       <div className="relative w-full h-full px-4">
         <div ref={sliderRef} className="keen-slider h-full w-full">
