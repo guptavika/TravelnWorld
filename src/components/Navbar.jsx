@@ -242,7 +242,7 @@
 
 import React, { useState } from "react";
 import logo from "/logo.png";
-import { navbarLinks } from "../constants/NavbarLinks";
+// import { navbarLinks } from "../constants/NavbarLinks";
 // import { Link } from 'lucide-react';
 import { Link } from "react-router-dom";
 

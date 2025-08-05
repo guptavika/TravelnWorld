@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";
 import TestimonialPage from "./pages/TestimonialPage";
-// import Packages from "./pages/packages";
 import Destination from "./pages/Destination";
 import Domestic from "./pages/Domestic";
 import International from "./pages/International";
