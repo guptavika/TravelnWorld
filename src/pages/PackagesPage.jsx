@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import HeroVideo from '../components/contact/HeroVideo'
 import TourPackages from '../components/Tourpackage'
 
-const Packages = () => {
+const PackagesPage = () => {
   return (
     <div>
       <Navbar/>
@@ -15,4 +15,4 @@ const Packages = () => {
   )
 }
 
-export default Packages
+export default PackagesPage
