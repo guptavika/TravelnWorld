@@ -81,55 +81,53 @@
 //           </div>
 //         </form>
 //       </div>
-//     </>
+//     </>//
 //   );
 // };
 
 // export default VideoBackground;
 
-// VideoBackground.jsx
+ 
 import React, { useState } from "react";
-import Swal from "sweetalert2";
-import Video from "../../public/hero.mp4";
+ import Swal from "sweetalert2";
+ import Video from "../../public/hero.mp4";
 
-const VideoBackground = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    company_name: "",
-    phone: "",
-    email: "",
-    location: "",
-    your_requirements: "",
-    agree: false,
-  });
+ const VideoBackground = () => {
+   const [formData, setFormData] = useState({
+     name: "",
+     company_name: "",
+     phone: "",
+     email: "",
+     location: "",
+     your_requirements: "",
+     agree: false,
+   });
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
+   const handleChange = (e) => {
+     const { name, value, type, checked } = e.target;
+     setFormData((prev) => ({
+       ...prev,
+       [name]: type === "checkbox" ? checked : value,
+     }));
+   };
+      const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.agree) {
-      Swal.fire({
-        icon: "warning",
-        title: "Please agree",
-        text: "You must agree to get Email/SMS updates.",
-      });
-      return;
-    }
-
-    try {
-      // Example POST request to your API
-      const response = await fetch("/api/send-form", {
+     if (!formData.agree) {
+       Swal.fire({
+         icon: "warning",
+         title: "Please agree",
+         text: "You must agree to get Email/SMS updates.",
+       });
+       return;
+     }
+     try {
+       // Example POST request to your API
+       const response = await fetch("/api/send-form", {
         
         
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       console.log(response);

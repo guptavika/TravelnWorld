@@ -354,7 +354,7 @@ const TrendingDestination = () => {
   ];
  
   return (
-    <div className="flex flex-col items-center gap-8 p-10 bg-[#fefaf3] min-h-screen relative">
+    <div className="flex flex-col items-center gap-8 p-10 bg-[#fefaf3] max-h-screen relative">
       <h1 className="text-3xl font-bold text-[#00004a] mb-6">
         Trending Destinations
       </h1>

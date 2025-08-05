@@ -1,4 +1,3 @@
-
 // import React from 'react'
 // import logo from "../assets/Img/logo.png"
 // import { navbarLinks } from '../constants/NavbarLinks';
@@ -106,7 +105,6 @@
 // export default Navbar;
 //<<<<<<<<<<<<<<<<<<<<........................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
 // import React from 'react';
 // import logo from "../../public/logo.png";
 // import { navbarLinks } from '../constants/NavbarLinks';
@@ -173,7 +171,6 @@
 // };
 
 // export default Navbar;
-
 
 // import React, { useState } from 'react';
 // import logo from "/logo.png"; // ✅ use /logo.png because it’s in public/
@@ -243,17 +240,17 @@
 
 // export default Navbar;
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import logo from "/logo.png";
-import { navbarLinks } from '../constants/NavbarLinks';
+import { navbarLinks } from "../constants/NavbarLinks";
 // import { Link } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='flex flex-col sm:flex-row items-center gap-4 justify-between sticky top-0 z-50'>
+    <div className="flex flex-col sm:flex-row items-center gap-4 justify-between sticky top-0 z-50">
       <header className="bg-white px-2 py-3 z-[70] w-full sticky top-0">
         <nav className="flex justify-between items-center mx-auto relative">
           <a href="/">
@@ -265,36 +262,115 @@ const Navbar = () => {
           {/* Nav Links */}
           <div
             className={`duration-300 lg:static absolute bg-white left-0 top-[60px] lg:w-auto w-full flex items-center px-5 lg:px-0 ${
-              isOpen ? 'block' : 'hidden'
+              isOpen ? "block" : "hidden"
             } lg:flex`}
           >
             <ul className="flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full lg:w-auto items-center justify-center">
+              <li>
+                <Link
+                  className="hover:text-[#eb6734] text-base font-semibold"
+                  to="/"
+                >
+                  Home
+                </Link>
+              </li>
 
+              <li>
+                <Link
+                  to="/about-us"
+                  className="hover:text-[#eb6734] text-base font-semibold"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"
+                  to="/packages"
+                >
+                  Packages
+                </Link>
+              </li>
+              <li className="relative group cursor-pointer">
+                {" "}
+                {/* Added cursor-pointer here */}
+                <Link
+                  className="hover:text-[#eb6734] text-base font-semibold cursor-pointer flex items-center"
+                  to="/destination"
+                >
+                  Destination
+                  {/* Optional dropdown icon */}
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </Link>
+                {/* Dropdown with transition */}
+                <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <li>
+                    <Link
+                      className="block px-4 py-2 hover:bg-[#eb6734] hover:text-white text-base font-semibold rounded-t-md"
+                      to="/destination/domestic"
+                    >
+                      Domestic
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="block px-4 py-2 hover:bg-[#eb6734] hover:text-white text-base font-semibold rounded-b-md"
+                      to="/destination/international"
+                    >
+                      International
+                    </Link>
+                  </li>
+                </ul>
+              </li>
 
-
-              <li><Link className="hover:text-[#eb6734] text-base font-semibold" to="/">Home</Link></li>
-
-
-
-
-              <li><Link to="/about-us" className="hover:text-[#eb6734] text-base font-semibold" >About</Link></li>
-
-
-
-
-
-              <li><span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer">Packages</span></li>
-              <li><span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer">Destination</span></li>
-              <li><a className="hover:text-[#eb6734] text-base font-semibold" href="/Blogs">Blogs</a></li>
-              <li><a className="hover:text-[#eb6734] text-base font-semibold" href="/testimonials">Testimonials</a></li>
-              <li><a className="hover:text-[#eb6734] text-base font-semibold" href="/b2b-login">B2B Login</a></li>
-              <li className="lg:hidden"><a className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700" href="/contact">Contact</a></li>
+              <li>
+                <Link
+                  className="hover:text-[#eb6734] text-base font-semibold"
+                  to="/Blogs"
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:text-[#eb6734] text-base font-semibold"
+                  to="/testimonials"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:text-[#eb6734] text-base font-semibold"
+                  to="/B2bLogin"
+                >
+                  B2B Login
+                </Link>
+              </li>
+              {/* <li className="lg:hidden"><a className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700" href="/contact">Contact</a></li> */}
             </ul>
           </div>
 
           {/* Desktop Contact Button */}
           <div className="hidden lg:flex items-center">
-            <a className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700" href="/contact">Contact</a>
+            <Link
+              className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700"
+              to="/contact"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Hamburger Button */}
@@ -303,12 +379,32 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="h-8 w-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="h-8 w-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </div>

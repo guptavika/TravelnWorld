@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
- 
+ import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#00004a] text-white px-8 py-10">
@@ -15,8 +15,8 @@ const Footer = () => {
           </ul>
           <h4 className="font-semibold text-lg mt-6 mb-4">Support</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>Contact Us</li>
-            <li>About Us</li>
+            <li> <Link to="/contact"> Contact Us </Link> </li>
+            <li><Link to="/about-us"> About </Link></li>
           </ul>
         </div>
  
@@ -24,11 +24,13 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold text-lg mb-4">Quick links</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>Home</li>
+             <li><Link to="/"> Home </Link></li>
             <li>Trending Destination</li>
             <li>Popular Destination</li>
-            <li>Domestic Destination</li>
-            <li>International Destination</li>
+              <li><Link to="/destination/domestic"> Domestic Destination </Link></li>
+            
+
+               <li><Link to="/destination/international"> International </Link></li>
           </ul>
         </div>
  
@@ -64,7 +66,7 @@ const Footer = () => {
   </a>
 </div>
  
-          <h4 className="font-semibold text-lg mb-2">Sign Up</h4>
+          <h4 className="font-semibold text-lg mb-2"> <Link to="/B2bLogin"> B2BLogin </Link></h4>
           <p className="text-sm text-gray-300 mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis.

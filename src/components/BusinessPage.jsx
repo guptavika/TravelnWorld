@@ -4,7 +4,7 @@ export default function BusinessPage() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative max-h-screen">
       {/* Hero Section with text over image */}
       <section
         className="relative flex items-center justify-center h-[80vh] bg-cover bg-center"

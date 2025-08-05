@@ -129,6 +129,9 @@ import dubaiImg from "../../public/Tourpackageimage/image2.jpg";
  import darjeelingImg from "../../public/Tourpackageimage/image5.jpg";
  import kashmirImg from "../../public/Tourpackageimage/image7.jpg";
   import tajmahalImg from "../../public/Tourpackageimage/image8.jpg";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 // Card Component with hover effect on image
 const DestinationCard = ({ title, description, image }) => {
   return (
@@ -149,9 +152,12 @@ const DestinationCard = ({ title, description, image }) => {
 };
  
 const TourPackages = () => {
-  const handleExploreClick = (section) => {
-    alert(`You clicked Explore All for ${section}`);
-  };
+  // const handleExploreClick = (section) => {
+  //   alert(`You clicked Explore All for ${section}`);
+  // };
+
+  const navigate=useNavigate();
+  ;
  
   return (
     <div className="px-6 py-10 space-y-20">
@@ -170,7 +176,7 @@ const TourPackages = () => {
         <div className="absolute -top-10 right-4 sm:right-[7%]">
           <button
             className="bg-blue-900 text-white px-4 py-1 rounded-lg text-sm"
-            onClick={() => handleExploreClick("International")}
+            onClick={() => navigate("/destination/international")}
           >
             Explore All
           </button>
@@ -206,32 +212,40 @@ const TourPackages = () => {
         <div className="absolute -top-10 right-4 sm:right-[7%]">
           <button
             className="bg-blue-900 text-white px-4 py-1 rounded-lg text-sm"
-            onClick={() => handleExploreClick("Domestic")}
+            onClick={() => navigate("/destination/domestic")}
+
           >
             Explore All
           </button>
         </div>
- 
-        <DestinationCard
+ <Link to='/destination/domestic'> 
+        <DestinationCard 
           title="Goa"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={goaImg}
         />
+        </Link>
+        <Link to='/destination/domestic'>
         <DestinationCard
           title="Darjeeling"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={darjeelingImg}
         />
+        </Link>
+        <Link to='/destination/domestic'>
         <DestinationCard
           title="Kashmir"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={kashmirImg}
         />
+        </Link>
+        <Link to='/destination/domestic'>
         <DestinationCard
           title="Taj Mahal"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={tajmahalImg}
         />
+        </Link>
       </div>
     </div>
   );
