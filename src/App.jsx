@@ -12,6 +12,7 @@ import International from "./pages/International";
 import DomesticPackageCards from "./components/Packages/DomesticPackageCards";
 import B2bLogin from "./components/B2bLogin"
 import AutoScrollToTop from "./components/AutoScrollToTop";
+import BlogDetail from "./components/Blogs/BlogDetail";
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
 <Route path="/destination/international/*" element={<International/>} />
 <Route path="/destination/domestic/*" element={<Domestic />} />
 <Route path="/B2bLogin" element={<B2bLogin/>} />
+ <Route path="/blogs/:blogId" element={<BlogDetail />} />
 
 
 

@@ -359,19 +359,27 @@ const Navbar = () => {
                   B2B Login
                 </Link>
               </li>
+              <li>
+                <Link
+              className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700"
+              to="/contact"
+            >
+              Contact
+            </Link>
+              </li>
               {/* <li className="lg:hidden"><a className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700" href="/contact">Contact</a></li> */}
             </ul>
           </div>
 
           {/* Desktop Contact Button */}
-          <div className="hidden lg:flex items-center">
+          {/* <div className="hidden lg:flex items-center">
             <Link
               className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700"
               to="/contact"
             >
               Contact
             </Link>
-          </div>
+          </div> */}
 
           {/* Hamburger Button */}
           <div

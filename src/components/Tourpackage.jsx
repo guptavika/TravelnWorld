@@ -181,27 +181,34 @@ const TourPackages = () => {
             Explore All
           </button>
         </div>
- 
+ <Link to='/destination/international'>
         <DestinationCard
           title="Dubai"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={dubaiImg}
         />
+        </Link>
+        <Link to='/destination/international'>
         <DestinationCard
           title="Vietnam"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={vietnamImg}
         />
+        </Link>
+        <Link to='/destination/international'>
         <DestinationCard
           title="Paris"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={parisImg}
         />
+        </Link>
+        <Link to='/destination/international'>
         <DestinationCard
           title="Kids"
           description="Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit"
           image={kidsImg}
         />
+        </Link>
       </div>
  
       {/* Domestic Section */}

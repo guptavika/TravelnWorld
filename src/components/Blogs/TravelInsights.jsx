@@ -1,7 +1,8 @@
 import React from "react";
-
+import{ Link} from "react-router-dom"
 const travelBlogs = [
   {
+    id:"1",
     title: "How to Customize Your Dream Vacation Package Without Overpaying",
     date: "May 15, 2024",
     author: "SONU",
@@ -11,6 +12,7 @@ const travelBlogs = [
       "Planning your dream vacation doesn't have to break the bank! In this guide, we'll show you how to customize your perfect travel package while staying within your budget",
   },
   {
+    id:"2",
     title: "Top 10 Hidden Gems to visit in India",
     date: "June 2, 2024",
     author: "Sonu kumar",
@@ -70,9 +72,11 @@ const TravelInsights = () => {
                 <button className="flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition font-medium border border-gray-200">
                   Contact
                 </button>
+                <Link to={`/blogs/${blog.id}`} className="flex-1">
                 <button className="flex-1 bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition font-medium">
                   Read More
                 </button>
+                </Link>
               </div>
             </div>
           </div>

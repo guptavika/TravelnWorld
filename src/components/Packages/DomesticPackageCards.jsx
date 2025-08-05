@@ -30,6 +30,7 @@ const destinationPackages = {
     {
       id: 1,
       title: "Goa Beach Paradise Package",
+      slug: "goa",
       duration: "5 days & 4 nights",
       image: "https://wallup.net/wp-content/uploads/2016/01/200866-nature-landscape-water.jpg",
       // ... other package details
