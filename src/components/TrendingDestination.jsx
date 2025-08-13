@@ -193,36 +193,250 @@
  
 // export default TrendingDestinations;
  
+// import React, { useRef } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, EffectFade } from "swiper/modules";
+// import { ChevronRight, ChevronLeft } from "lucide-react";
+// import "swiper/css";
+// import "swiper/css/effect-fade";
+ 
+// // ✅ Card Component‹
+// const DestinationCard = ({
+//   title,
+//   description,
+//   price,
+//   images,
+//   direction = "ltr",
+// }) => {
+//   return (
+//     <div className="flex-shrink-0 w-[320px] flex flex-col md:flex-row bg-[#fffaf1] border border-gray-300 rounded-lg overflow-hidden shadow-md">
+//       <div className="flex flex-col justify-between p-4 w-full md:w-2/3">
+//         <div>
+//           <h2 className="text-xl font-semibold text-gray-800">
+//             {title}Andaman
+//           </h2>
+//           <p className="text-sm text-gray-600 mt-2">
+//             {description}Lorem ipsum dolor sir amet conc scelerisque faucibus
+//             neque....
+//           </p>
+//         </div>
+//         <div className="mt-3">
+//           <p className="text-red-600 font-bold text-md">{price}4000.00 RS</p>
+//           <button className="mt-2 px-4 py-1.5 bg-[#00004a] text-white text-sm rounded hover:bg-blue-900 transition">
+//             Know more
+//           </button>
+//         </div>
+//       </div>
+ 
+//       <div className="w-full md:w-1/3 h-40 md:h-auto">
+//         <Swiper
+//           modules={[Autoplay, EffectFade]}
+//           autoplay={{
+//             delay: 2500,
+//             disableOnInteraction: false,
+//             reverseDirection: direction === "rtl",
+//           }}
+//           loop
+//           speed={1000}
+//           effect="fade"
+//           className="w-full h-full"
+//         >
+//           {images.map((img, idx) => (
+//             <SwiperSlide key={idx}>
+//               <img
+//                 src={img}
+//                 alt={`${title}-${idx}`}
+//                 className="w-full h-full object-cover"
+//                 loading="lazy"
+//               />
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+//       </div>
+//     </div>
+//   );
+// };
+ 
+// // ✅ Main Component
+// const TrendingDestination = () => {
+//   const scrollRef = useRef(null);
+ 
+//   const scrollNext = () => {
+//     const container = scrollRef.current;
+//     if (container && container.children.length > 0) {
+//       const card = container.children[0];
+//       const cardWidth = card.getBoundingClientRect().width;
+//       const gap = parseInt(getComputedStyle(container).gap || 24);
+//       container.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
+//     }
+//   };
+ 
+//   const scrollPrev = () => {
+//     const container = scrollRef.current;
+//     if (container && container.children.length > 0) {
+//       const card = container.children[0];
+//       const cardWidth = card.getBoundingClientRect().width;
+//       const gap = parseInt(getComputedStyle(container).gap || 24);
+//       container.scrollBy({ left: -(cardWidth + gap), behavior: "smooth" });
+//     }
+//   };
+ 
+
+  
+//   // Destination data - 6 unique destinations
+//   const destinations = [
+//     {
+//       title: "",
+//       description: " ",
+//       price: " ",
+//       images: [
+//         "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop",
+//       ],
+//       direction: "rtl",
+//     },
+//     {
+//       title: " ",
+//       description: " ",
+//       price: " ",
+//       images: [
+//         "https://plus.unsplash.com/premium_photo-1697730277839-440df1a4415f?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop",
+//         "https://plus.unsplash.com/premium_photo-1697730150003-26a1d469adb4?w=800&auto=format&fit=crop",
+//       ],
+//       direction: "ltr",
+//     },
+//     {
+//       title: " ",
+//       description: " ",
+//       price: " ",
+//       images: [
+//         "https://images.unsplash.com/photo-1588411392791-71a7c42f0bc6?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop",
+//       ],
+//       direction: "ltr",
+//     },
+//     {
+//       title: " ",
+//       description: " ",
+//       price: " ",
+//       images: [
+//         "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop",
+//       ],
+//       direction: "rtl",
+//     },
+//     {
+//       title: " ",
+//       description: " ",
+//       price: " ",
+//       images: [
+//         "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&auto=format&fit=crop",
+//       ],
+//       direction: "ltr",
+//     },
+//     {
+//       title: " ",
+//       description: " ",
+//       price: " ",
+//       images: [
+//         "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1592906209472-36b846c4c2ef?w=800&auto=format&fit=crop",
+//         "https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&auto=format&fit=crop",
+//       ],
+//       direction: "rtl",
+//     },
+//   ];
+ 
+//   return (
+//     <div className="flex flex-col items-center gap-8 p-10 bg-[#fefaf3] max-h-screen relative">
+//       <h1 className="text-3xl font-bold text-[#00004a] mb-6">
+//         Trending Destinations
+//       </h1>
+ 
+//       <div className="w-full max-w-7xl relative flex items-center">
+//         {/* Prev Button */}
+//         <button
+//           onClick={scrollPrev}
+//           className="absolute left-[-30px] z-10 bg-[#00004a] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 shadow-md"
+//           aria-label="Previous destinations"
+//         >
+//           <ChevronLeft className="w-5 h-5" />
+//         </button>
+ 
+//         {/* Cards Container - scrollbar completely hidden */}
+//         <div
+//           ref={scrollRef}
+//           className="flex gap-6 overflow-x-auto w-full no-scrollbar"
+//           style={{
+//             scrollSnapType: "x mandatory",
+//             maxWidth: "100%",
+//             scrollbarWidth: "none",
+//             msOverflowStyle: "none",
+//           }}
+//         >
+//           {destinations.map((destination, index) => (
+//             <DestinationCard
+//               key={index}
+//               title={destination.title}
+//               description={destination.description}
+//               price={destination.price}
+//               images={destination.images}
+//               direction={destination.direction}
+//             />
+//           ))}
+//         </div>
+ 
+//         {/* Next Button */}
+//         <button
+//           onClick={scrollNext}
+//           className="absolute right-[-30px] z-10 bg-[#00004a] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 shadow-md"
+//           aria-label="Next destinations"
+//         >
+//           <ChevronRight className="w-5 h-5" />
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+ 
+// export default TrendingDestination;
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { ChevronRight, ChevronLeft } from "lucide-react";
 import "swiper/css";
 import "swiper/css/effect-fade";
  
-// ✅ Card Component‹
-const DestinationCard = ({
-  title,
-  description,
-  price,
-  images,
-  direction = "ltr",
-}) => {
+// Card component with Know More navigation
+const DestinationCard = ({ id, title, description, price, images, direction }) => {
+  const navigate = useNavigate();
+ 
+  const handleKnowMore = () => {
+    navigate(`/${id}`);
+  };
+ 
   return (
     <div className="flex-shrink-0 w-[320px] flex flex-col md:flex-row bg-[#fffaf1] border border-gray-300 rounded-lg overflow-hidden shadow-md">
       <div className="flex flex-col justify-between p-4 w-full md:w-2/3">
         <div>
-          <h2 className="text-xl font-semibold text-gray-800">
-            {title}Andaman
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
           <p className="text-sm text-gray-600 mt-2">
-            {description}Lorem ipsum dolor sir amet conc scelerisque faucibus
-            neque....
+            {description || "Explore top attractions and experiences."}
           </p>
         </div>
         <div className="mt-3">
-          <p className="text-red-600 font-bold text-md">{price}4000.00 RS</p>
-          <button className="mt-2 px-4 py-1.5 bg-[#00004a] text-white text-sm rounded hover:bg-blue-900 transition">
+          <p className="text-red-600 font-bold text-md">{price || "From"} 4000.00 RS</p>
+          <button
+            onClick={handleKnowMore}
+            className="mt-2 px-4 py-1.5 bg-[#00004a] text-white text-sm rounded hover:bg-blue-900 transition"
+          >
             Know more
           </button>
         </div>
@@ -257,7 +471,6 @@ const DestinationCard = ({
   );
 };
  
-// ✅ Main Component
 const TrendingDestination = () => {
   const scrollRef = useRef(null);
  
@@ -281,86 +494,118 @@ const TrendingDestination = () => {
     }
   };
  
-
-  
-  // Destination data - 6 unique destinations
   const destinations = [
     {
-      title: "",
-      description: " ",
-      price: " ",
-      images: [
-        "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop",
-      ],
+      id: "uttarakhand",
+      title: "Uttarakhand",
+      images: ["https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop"],
       direction: "rtl",
     },
     {
-      title: " ",
-      description: " ",
-      price: " ",
-      images: [
-        "https://plus.unsplash.com/premium_photo-1697730277839-440df1a4415f?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop",
-        "https://plus.unsplash.com/premium_photo-1697730150003-26a1d469adb4?w=800&auto=format&fit=crop",
-      ],
+      id: "uttar-pradesh",
+      title: "Uttar Pradesh",
+      images: ["https://plus.unsplash.com/premium_photo-1697730277839-440df1a4415f?w=800&auto=format&fit=crop"],
       direction: "ltr",
     },
     {
-      title: " ",
-      description: " ",
-      price: " ",
-      images: [
-        "https://images.unsplash.com/photo-1588411392791-71a7c42f0bc6?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop",
-      ],
+      id: "himachal-pradesh",
+      title: "Himachal Pradesh",
+      images: ["https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop"],
       direction: "ltr",
     },
     {
-      title: " ",
-      description: " ",
-      price: " ",
-      images: [
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop",
-      ],
+      id: "delhi",
+      title: "Delhi",
+      images: ["https://plus.unsplash.com/premium_photo-1697730150003-26a1d469adb4?w=800&auto=format&fit=crop"],
+      direction: "rtl",
+    },
+    // {
+    //   id: "rajastan",
+    //   title: "Rajasthan",
+    //   images: ["https://plus.unsplash.com/premium_photo-1697730150003-26a1d469adb4?w=800&auto=format&fit=crop"],
+    //   direction: "rtl",
+    // },
+    {
+      id: "madhya-pradesh",
+      title: "Madhya Pradesh",
+      images: ["https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop"],
+      direction: "ltr",
+    },
+    {
+      id: "goa",
+      title: "Goa",
+      images: ["https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop"],
+      direction: "ltr",
+    },
+    {
+      id: "maharashtra",
+      title: "Maharashtra",
+      images: ["https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop"],
       direction: "rtl",
     },
     {
-      title: " ",
-      description: " ",
-      price: " ",
-      images: [
-        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&auto=format&fit=crop",
-      ],
+      id: "kerala",
+      title: "Kerala",
+      images: ["https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop"],
       direction: "ltr",
     },
     {
-      title: " ",
-      description: " ",
-      price: " ",
-      images: [
-        "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1592906209472-36b846c4c2ef?w=800&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&auto=format&fit=crop",
-      ],
+      id: "tamil-nadu",
+      title: "Tamil Nadu",
+      images: ["https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=800&auto=format&fit=crop"],
+      direction: "ltr",
+    },
+    {
+      id: "karnataka",
+      title: "Karnataka",
+      images: ["https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop"],
       direction: "rtl",
     },
+    //  {
+    //   id: "jammu-kashmir-ladakh",
+    //   title: "jammu-kashmir-ladakh",
+    //   images: ["https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=800&auto=format&fit=crop"],
+    //   direction: "rtl",
+    // },
+   
+    {
+      id: "west-bengal",
+      title: "West Bengal",
+      images: ["https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop"],
+      direction: "rtl",
+    },
+    {
+      id: "odisha",
+      title: "Odisha",
+      images: ["https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop"],
+      direction: "ltr",
+    },
+    {
+      id: "assam",
+      title: "Assam",
+      images: ["https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800&auto=format&fit=crop"],
+      direction: "rtl",
+    },
+    // {
+    //   id: "sikkim",
+    //   title: "Sikkim",
+    //   images: ["https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop"],
+    //   direction: "ltr",
+    // },
+    //  {
+    //   id: "Panjab",
+    //   title: "Panjab",
+    //   images: ["https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&auto=format&fit=crop"],
+    //   direction: "ltr",
+    // },
   ];
  
   return (
-    <div className="flex flex-col items-center gap-8 p-10 bg-[#fefaf3] max-h-screen relative">
-      <h1 className="text-3xl font-bold text-[#00004a] mb-6">
-        Trending Destinations
-      </h1>
+    <div className="flex flex-col items-center gap-6 p-8 bg-[#fefaf3] min-h-fit relative">
+      {/* <Navbar /> */}
+      <h1 className="text-3xl font-bold text-[#00004a] mb-4">Trending Destinations</h1>
  
       <div className="w-full max-w-7xl relative flex items-center">
-        {/* Prev Button */}
         <button
           onClick={scrollPrev}
           className="absolute left-[-30px] z-10 bg-[#00004a] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 shadow-md"
@@ -369,7 +614,6 @@ const TrendingDestination = () => {
           <ChevronLeft className="w-5 h-5" />
         </button>
  
-        {/* Cards Container - scrollbar completely hidden */}
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto w-full no-scrollbar"
@@ -378,11 +622,14 @@ const TrendingDestination = () => {
             maxWidth: "100%",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
+            paddingBottom: 0,
+            marginBottom: 0,
           }}
         >
-          {destinations.map((destination, index) => (
+          {destinations.map((destination) => (
             <DestinationCard
-              key={index}
+              key={destination.id}
+              id={destination.id}
               title={destination.title}
               description={destination.description}
               price={destination.price}
@@ -392,7 +639,6 @@ const TrendingDestination = () => {
           ))}
         </div>
  
-        {/* Next Button */}
         <button
           onClick={scrollNext}
           className="absolute right-[-30px] z-10 bg-[#00004a] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 shadow-md"
@@ -401,8 +647,11 @@ const TrendingDestination = () => {
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
+     
     </div>
   );
 };
  
 export default TrendingDestination;
+ 
+ 

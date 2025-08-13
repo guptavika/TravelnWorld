@@ -1,8 +1,7 @@
 import React from 'react';
-import { useNavigate, Routes, Route, useParams, Link } from 'react-router-dom';
+import { useNavigate, Routes, Route, useParams } from 'react-router-dom';
 import PackageCardDetail from './PackageCardDetails';
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+
 // Destinations data
 const destinations = [
   {
@@ -25,7 +24,7 @@ const destinations = [
   },
 ];
 
-// Package data
+// Enhanced Package data with more details
 const destinationPackages = {
   goa: [
     {
@@ -33,42 +32,79 @@ const destinationPackages = {
       title: "Goa Beach Paradise Package",
       duration: "5 days & 4 nights",
       image: "https://wallup.net/wp-content/uploads/2016/01/200866-nature-landscape-water.jpg",
-      price: "₹12,999",
-      rating: "4.5",
-      reviews: "24",
+      rating: 4.5,
+      reviews: 124,
+      oldPrice: 29999,
+      discount: 5000,
+      price: 24999,
+      description: "Experience the best beaches of Goa with luxury stays and water sports.",
+      highlights: [
+        "Private beach access",
+        "Sunset cruise",
+        "Water sports activities",
+        "Local cuisine tasting"
+      ],
+      inclusions: [
+        "4 nights luxury accommodation",
+        "Daily breakfast",
+        "Airport transfers",
+        "Guided city tour"
+      ],
+      itinerary: [
+        "Day 1: Arrival and beach relaxation",
+        "Day 2: North Goa sightseeing",
+        "Day 3: Water sports and cruise",
+        "Day 4: South Goa exploration",
+        "Day 5: Departure"
+      ]
     },
     {
       id: 2,
       title: "Goa Adventure Package",
       duration: "4 days & 3 nights",
       image: "https://wallup.net/wp-content/uploads/2016/01/200866-nature-landscape-water.jpg",
-      price: "₹10,999",
-      rating: "4.2",
-      reviews: "18",
-    },
+      rating: 4.2,
+      reviews: 87,
+      oldPrice: 24999,
+      discount: 3000,
+      price: 21999,
+      description: "Thrilling adventure activities in Goa's beautiful landscapes.",
+      highlights: [
+        "Parasailing",
+        "Scuba diving",
+        "Trekking",
+        "Bungee jumping"
+      ]
+    }
   ],
   andaman: [
     {
       id: 1,
-      title: "Andaman Beach Paradise Package",
-      duration: "5 days & 4 nights",
+      title: "Andaman Island Getaway",
+      duration: "6 days & 5 nights",
       image: "https://wallup.net/wp-content/uploads/2016/01/200866-nature-landscape-water.jpg",
-      price: "₹15,999",
-      rating: "4.7",
-      reviews: "32",
-    },
+      rating: 4.7,
+      reviews: 156,
+      oldPrice: 39999,
+      discount: 7000,
+      price: 32999,
+      description: "Explore the pristine beaches and marine life of Andaman."
+    }
   ],
   tamilnadu: [
     {
       id: 1,
-      title: "Tamilnadu Cultural Package",
-      duration: "6 days & 5 nights",
+      title: "Tamilnadu Cultural Tour",
+      duration: "7 days & 6 nights",
       image: "https://wallup.net/wp-content/uploads/2016/01/200866-nature-landscape-water.jpg",
-      price: "₹13,999",
-      rating: "4.3",
-      reviews: "21",
-    },
-  ],
+      rating: 4.4,
+      reviews: 112,
+      oldPrice: 34999,
+      discount: 6000,
+      price: 28999,
+      description: "Discover the rich cultural heritage of Tamilnadu."
+    }
+  ]
 };
 
 // Destination Card Component
@@ -76,7 +112,7 @@ const DestinationCard = ({ title, image, slug }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(slug); // Relative navigation
+    navigate(slug);
   };
 
   return (
@@ -87,6 +123,50 @@ const DestinationCard = ({ title, image, slug }) => {
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+      </div>
+    </div>
+  );
+};
+
+// Package Card Component (extracted for reusability)
+const PackageCard = ({ pkg, slug }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`${slug}/${pkg.id}`); // Navigate to package detail page
+  };
+
+  return (
+    <div 
+      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+      onClick={handleClick}
+    >
+      <img src={pkg.image} alt={pkg.title} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h2 className="text-xl font-semibold">{pkg.title}</h2>
+        <p className="text-gray-600">{pkg.duration}</p>
+        <div className="flex items-center mt-2">
+          <span className="text-yellow-500">★ {pkg.rating || 4.0}</span>
+          <span className="text-gray-500 ml-2">({pkg.reviews || 0} reviews)</span>
+        </div>
+        <div className="mt-4">
+          {pkg.oldPrice && (
+            <>
+              <span className="text-gray-500 line-through">₹{pkg.oldPrice}</span>
+              <span className="text-green-600 ml-2">Save ₹{pkg.discount}</span>
+            </>
+          )}
+          <div className="text-2xl font-bold mt-1">₹{pkg.price}</div>
+        </div>
+        <button 
+          className="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          onClick={(e) => {
+            e.stopPropagation();
+            // Handle direct booking if needed
+          }}
+        >
+          Book Now
+        </button>
       </div>
     </div>
   );
@@ -115,26 +195,7 @@ const DestinationPackages = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {packages.map((pkg) => (
-          <div key={pkg.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src={pkg.image} alt={pkg.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{pkg.title}</h2>
-              <p className="text-gray-600">{pkg.duration}</p>
-              <div className="flex items-center mt-2">
-                <span className="text-yellow-500">★ {pkg.rating}</span>
-                <span className="text-gray-500 ml-2">({pkg.reviews} reviews)</span>
-              </div>
-              <div className="mt-4">
-                <span className="text-2xl font-bold">₹{pkg.price}</span>
-              </div>
-              <Link
-                to={`${pkg.id}`}
-                className="mt-4 w-full block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-              >
-                View Details
-              </Link>
-            </div>
-          </div>
+          <PackageCard key={pkg.id} pkg={pkg} slug={slug} />
         ))}
       </div>
     </div>
@@ -144,8 +205,6 @@ const DestinationPackages = () => {
 // Main Domestic Destinations Component
 const DomesticDestinations = () => {
   return (
-    <div>
-      <Navbar/>
     <div className="py-12 px-4 max-w-7xl mx-auto">
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold text-red-600">Domestic Destinations</h2>
@@ -161,9 +220,6 @@ const DomesticDestinations = () => {
           />
         ))}
       </div>
-
-      </div>
-<Footer/>
     </div>
   );
 };
@@ -174,7 +230,7 @@ const DomesticPackageCards = () => {
     <Routes>
       <Route index element={<DomesticDestinations />} />
       <Route path=":slug" element={<DestinationPackages />} />
-      <Route path=":slug/:packageId" element={<PackageCardDetail />} />
+      <Route path=":slug/:packageId" element={<PackageCardDetail packageType="domestic" />} />
     </Routes>
   );
 };

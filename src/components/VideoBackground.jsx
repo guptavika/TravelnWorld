@@ -91,6 +91,7 @@
 import React, { useState } from "react";
  import Swal from "sweetalert2";
  import Video from "../../public/hero.mp4";
+import BannerSlider from "./BannerSlider";
 
  const VideoBackground = () => {
    const [formData, setFormData] = useState({
@@ -167,11 +168,14 @@ import React, { useState } from "react";
 
   return (
     <>
+    <div>
+      <BannerSlider className="relative z-10" />
+
       <video
         autoPlay
         loop
         mute
-        className="absolute z-0 top-0 left-0 w-full h-[36rem] object-cover pt-10 mb-[100px] "
+        className="absolute z-0 top-20 left-0 w-full h-[36rem] object-cover pt-10 mb-[100px] "
       >
         <source src={Video} type="video/mp4" />
         Your browser does not support the video tag.
@@ -260,6 +264,7 @@ import React, { useState } from "react";
             Submit
           </button>
         </form>
+      </div>
       </div>
     </>
   );

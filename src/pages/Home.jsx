@@ -15,11 +15,18 @@ import Footer from '../components/Footer'
 import TourPackage from '../components/Tourpackage'
 import BrowseTopTravel from "../components/BrowseTopTravel";
 import PlacesToVisit from '../components/PlacesToVisit';
+import BannerSlider from '../components/BannerSlider';
 const Home = () => {
   return (
     <div>
        <Navbar/>
+       
+
+       
+      
      <VideoBackground/>
+     
+
      <AboutUs/>
     <VerifiedTransports/>
       <TourPackage/> 

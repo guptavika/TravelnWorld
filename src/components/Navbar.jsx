@@ -250,7 +250,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-4 justify-between sticky top-0 z-50">
+    <div className="flex flex-col sm:flex-row items-center gap-4 justify-between sticky top-0 z-50 shadow-xl ">
       <header className="bg-white px-2 py-3 z-[70] w-full sticky top-0">
         <nav className="flex justify-between items-center mx-auto relative">
           <a href="/">
@@ -268,7 +268,7 @@ const Navbar = () => {
             <ul className="flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full lg:w-auto items-center justify-center">
               <li>
                 <Link
-                  className="hover:text-[#eb6734] text-base font-semibold"
+                  className="hover:text-[#eb6734] text-base font-semibold"  
                   to="/"
                 >
                   Home

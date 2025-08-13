@@ -11,7 +11,7 @@ const Footer = () => {
           <h4 className="font-semibold text-lg mb-4">Policy</h4>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>Privacy Policy</li>
-            <li>Terms Of Use</li>
+            <li><Link to="/TermsAndConditions">Terms Of Use</Link></li>
           </ul>
           <h4 className="font-semibold text-lg mt-6 mb-4">Support</h4>
           <ul className="space-y-2 text-sm text-gray-300">
