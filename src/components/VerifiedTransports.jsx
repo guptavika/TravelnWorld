@@ -95,7 +95,10 @@ import "keen-slider/keen-slider.min.css";
 import { ChevronRight, ChevronLeft, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import img1 from "../Assest/VerifiedTranspoetsImg/ayodhya darshan yatra[1].jpg";
-
+import img2 from "../Assest/VerifiedTranspoetsImg/RAM RATH TOUR AND TREVELS.jpg";
+import img3 from "../Assest/VerifiedTranspoetsImg/TripathiCarBooking.jpg";
+import img4 from "../Assest/VerifiedTranspoetsImg/DuniyaDekho.jpg";
+import img5 from "../Assest/VerifiedTranspoetsImg/DuniyaDekho.jpg";
 const transports = [
   {
     id: 1,
@@ -110,7 +113,7 @@ const transports = [
   },
   {
     id: 2,
-    img: "src/Assest/VerifiedTranspoetsImg/RAM RATH TOUR AND TREVELS.jpg",
+    img: img2,
     name: "Ram Rath Tour and Travels",
     slug: "ram-rath-tour-and-travels",
     location: "Jharkhandi, Rikabganj, Ayodhya",
@@ -121,7 +124,7 @@ const transports = [
   },
   {
     id: 3,
-    img: "src/Assest/VerifiedTranspoetsImg/TripathiCarBooking.jpg",
+    img: img3,
     name: "Tripathi Car Booking",
     slug: "tripathi-car-booking",
     location: "Jharkhandi, Rikabganj, Ayodhya",
@@ -132,7 +135,7 @@ const transports = [
   },
   {
     id: 4,
-    img: "src/Assest/VerifiedTranspoetsImg/DuniyaDekho.jpg",
+    img: img4,
     name: "Duniya Dekho Travels",
     slug: "duniya-dekho-travels",
     location: "Jharkhandi, Rikabganj, Ayodhya",
@@ -143,7 +146,7 @@ const transports = [
   },
   {
     id: 5,
-    img: "src/Assest/VerifiedTranspoetsImg/DuniyaDekho.jpg",
+    img: img5,
     name: "Duniya Dekho Travels",
     slug: "duniya-dekho-travels",
     location: "Jharkhandi, Rikabganj, Ayodhya",
