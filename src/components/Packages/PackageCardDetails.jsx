@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { FaPhone, FaMapMarkerAlt, FaCalendarAlt, FaRupeeSign, FaStar, FaUtensils, FaHotel, FaBus, FaHiking } from "react-icons/fa";
 import Footer from "../Footer";
-import NavBar from "../NavBar";
+import Navbar from "../Navbar";
+
 
 const PackageCardDetail = () => {
   const { slug, packageId } = useParams();
@@ -140,7 +141,7 @@ const PackageCardDetail = () => {
 
   return (
     <div>
-      <NavBar />
+      <Navbar/>
       <div className="bg-gray-50">
         <section className="pt-28 pb-12">
           <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
