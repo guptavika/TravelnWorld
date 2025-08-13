@@ -1,6 +1,6 @@
 // AboutUs.jsx
-import ai from '../../public/ai-photo.jpeg'
-import featured from '../../public/1.jpg'
+import img1 from '../../src/ai-photo.jpeg'
+import featured from '../../src/Assest/1.jpg'
 import { useNavigate } from 'react-router-dom';
 const AboutUs = () => {
 
@@ -14,7 +14,7 @@ const AboutUs = () => {
       <div className="relative w-full lg:w-[40%] flex justify-center md:justify-start items-center">
         <div className="relative">
           <img
-            src={ai}
+            src={img1}
             alt="Beach"
             className="rounded-full w-[250px] h-[300px] md:w-[320px] md:h-[400px] object-cover border-4 border-white shadow-lg"
           />

@@ -10,7 +10,7 @@ return (
         playsInline
         className="w-full md:h-[60vh] object-cover"
       >
-        <source src="../../public/Blogs/blog.mp4" type="video/mp4" />
+        <source src="src/Assest/AboutVideos/Blogs/blog.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

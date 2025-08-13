@@ -90,8 +90,9 @@
  
 import React, { useState } from "react";
  import Swal from "sweetalert2";
- import Video from "../../public/hero.mp4";
+ import Video from "../Assest/hero.mp4";
 import BannerSlider from "./BannerSlider";
+// import BannerSlider from "./BannercSlider";
 
  const VideoBackground = () => {
    const [formData, setFormData] = useState({

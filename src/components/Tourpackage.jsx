@@ -112,23 +112,24 @@
 // export default TourPackages;
  import React from "react";
  
-// Import images
-// import vietnamImg from "../assets/Tourpackageimage/image1.jpg";
-// import dubaiImg from "../assets/Tourpackageimage/image2.jpg";
-// import parisImg from "../assets/Tourpackageimage/image3.jpg";
-// import kidsImg from "../assets/Tourpackageimage/image4.jpg";
-// import goaImg from "../assets/Tourpackageimage/image6.jpg";
-// import darjeelingImg from "../assets/Tourpackageimage/image5.jpg";
-// import kashmirImg from "../assets/Tourpackageimage/image7.jpg";
-// import tajmahalImg from "../assets/Tourpackageimage/image8.jpg";
-import vietnamImg from "../../public/Tourpackageimage/image1.jpg";
-import dubaiImg from "../../public/Tourpackageimage/image2.jpg";
- import parisImg from "../..//public/Tourpackageimage/image3.jpg";
- import kidsImg from "../../public/Tourpackageimage/image4.jpg";
- import goaImg from "../../public/Tourpackageimage/image6.jpg";
- import darjeelingImg from "../../public/Tourpackageimage/image5.jpg";
- import kashmirImg from "../../public/Tourpackageimage/image7.jpg";
-  import tajmahalImg from "../../public/Tourpackageimage/image8.jpg";
+
+ import vietnamImg from "../Assest/Tourpackageimage/image1.jpg";
+ 
+ import dubaiImg from "../Assest/Tourpackageimage/image2.jpg";
+ import parisImg from "../Assest/Tourpackageimage/image3.jpg";
+ import kidsImg from "../Assest/Tourpackageimage/image4.jpg";
+import goaImg from "../Assest/Tourpackageimage/image6.jpg";
+import darjeelingImg from "../Assest/Tourpackageimage/image5.jpg";
+import kashmirImg from "../Assest/Tourpackageimage/image7.jpg";
+import tajmahalImg from "../Assest/Tourpackageimage/image8.jpg";
+// import vietnamImg from "../../public/Tourpackageimage/image1.jpg";
+// import dubaiImg from "../../public/Tourpackageimage/image2.jpg";
+//  import parisImg from "../..//public/Tourpackageimage/image3.jpg";
+//  import kidsImg from "../../public/Tourpackageimage/image4.jpg";
+//  import goaImg from "../../public/Tourpackageimage/image6.jpg";
+//  import darjeelingImg from "../../public/Tourpackageimage/image5.jpg";
+//  import kashmirImg from "../../public/Tourpackageimage/image7.jpg";
+//   import tajmahalImg from "../../public/Tourpackageimage/image8.jpg";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
