@@ -241,7 +241,7 @@
 // export default Navbar;
 
 import React, { useState } from "react";
-import logo from "/logo.png";
+import logo from "/src/Assest/logo.png";
 // import { navbarLinks } from "../constants/NavbarLinks";
 // import { Link } from 'lucide-react';
 import { Link } from "react-router-dom";
