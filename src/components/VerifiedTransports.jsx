@@ -94,11 +94,12 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { ChevronRight, ChevronLeft, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import img1 from "../Assest/VerifiedTranspoetsImg/ayodhya darshan yatra[1].jpg";
 
 const transports = [
   {
     id: 1,
-    img: "src/Assest/VerifiedTranspoetsImg/ayodhya darshan yatra[1].jpg",
+    img: img1,
     name: "Ayodhya Darshan Yatra",
     slug: "ayodhya-darshan-yatra",
     location: "Jharkhandi, Rikabganj, Ayodhya",
